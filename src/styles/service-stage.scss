@@ -1,0 +1,79 @@
+.service-stage {
+    background: $bg-primary;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 120px 20px;
+
+        @media (max-width: 767px) {
+            padding: 60px 20px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+        align-items: center;
+
+        &:nth-child(even) {
+            grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+            direction: rtl;
+
+            & > * {
+                direction: ltr;
+            }
+        }
+
+        @media (max-width: 767px) {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+            &:nth-child(even) {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+    }
+
+    &__subtitle {
+        background: $bg-primary;
+        color: $color-light;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    &__body {
+        background: $bg-dark;
+        padding: 20px;
+        border-radius: 32px;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        color: $color-light;
+
+        li {
+            padding-left: 20px;
+            position: relative;
+
+            &::before {
+                content: "•";
+                color: $color-secondary;
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.search-container {
+    position: relative;
+    width: 100%;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px 40px 10px 20px;
+    font-size: 1rem;
+    border: 1px solid $color-light;
+    border-radius: 12px;
+    color: $color-dark;
+    background: $bg-light-2;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    fill: $color-light;
+}

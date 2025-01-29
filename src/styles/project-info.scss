@@ -1,0 +1,84 @@
+.project-info {
+    background: $bg-light;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 120px 20px;
+        background: $bg-light;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 40px;
+    }
+
+    &__title {
+    }
+
+    &__technologies {
+    }
+
+    &__technologies-item {
+        font-size: 24px;
+    }
+
+    &__price {
+        .price {
+            color: $color-dark;
+        }
+
+        .time {
+            color: $color-dark;
+        }
+    }
+
+    &__tags {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+
+        .tag {
+            background: $bg-primary;
+            color: white;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .text {
+            color: $color-dark;
+        }
+    }
+}
+
+.project-images {
+    background: $bg-dark;
+
+    &__container {
+        padding: 120px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .project-image {
+        background-size: cover;
+        background-position: center;
+        border-radius: 32px;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.5s ease;
+        cursor: pointer;
+    }
+}

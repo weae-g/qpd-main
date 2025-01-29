@@ -1,0 +1,154 @@
+.footer {
+    z-index: 1;
+    --footer-background: #000000;
+    display: grid;
+    position: relative;
+    grid-area: footer;
+    min-height: 12rem;
+    background: var(--footer-background);
+  
+    &__container {
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  
+      grid-gap: 4rem;
+      padding: 2rem;
+      background: var(--footer-background);
+    }
+  
+    &__nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+  
+    &__socials {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+  
+    &__logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      p:nth-child(1) {
+        font-size: 64px;
+        color: white;
+      }
+    }
+  }
+  
+  .socials__list-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 32px;
+  
+    p {
+      font-size: clamp(17px, 20px, 28px);
+    }
+  }
+  
+  .copyright {
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 17px;
+    background: #080808;
+  }
+  
+  .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: var(--footer-background);
+    filter: url("#blob");
+  }
+  
+  .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 100%;
+    animation:
+      bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
+      bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 100%);
+  }
+  
+  @media (max-width: 900px) {
+    .footer {
+      &__container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+        
+      }
+    }
+  }
+  
+  a,
+  p {
+    color: #f5f7fa;
+    text-decoration: none;
+  }
+  
+  b {
+    color: white;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 0.75rem;
+  }
+  
+  .content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .content > div > div {
+    margin: 0.25rem 0;
+  }
+  
+  .content > div > div > * {
+    margin-right: 0.5rem;
+  }
+  
+  .image {
+    align-self: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.25rem 0;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  @keyframes bubble-size {
+    0%,
+    75% {
+      width: var(--size, 4rem);
+      height: var(--size, 4rem);
+    }
+    100% {
+      width: 0rem;
+      height: 0rem;
+    }
+  }
+  
+  @keyframes bubble-move {
+    0% {
+      bottom: -4rem;
+    }
+    100% {
+      bottom: var(--distance, 10rem);
+    }
+  }
+  

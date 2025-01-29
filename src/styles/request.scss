@@ -1,0 +1,23 @@
+.request {
+    min-height: 600px;
+    min-height: 100dvh;
+    padding: 120px 20px;
+    background-color: $bg-dark;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        margin-bottom: 60px;
+        color: #ffffff;
+    }
+
+    &__description {
+        margin-bottom: 40px;
+        font-size: 24px;
+        text-transform: lowercase;
+        color: #ffffff;
+    }
+}

@@ -1,0 +1,137 @@
+.services {
+  background: $bg-dark;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px;
+    background: $bg-dark;
+  }
+}
+
+.services-grid {
+  background: $bg-dark;
+  color: $color-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+
+  .services-title {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .services-info {
+    p {
+      font-size: 24px;
+    }
+  }
+
+  .grid {
+    width: 100%;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .service-card {
+    background: $gradient-dark;
+    padding: 20px;
+    border-radius: 16px;
+    transition:
+      transform 0.3s ease-in-out,
+      background-color 0.3s ease-in-out,
+      background-image 0.3s ease-in-out;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    background-size: 200% 200%;
+    animation: rotateGradient 3s linear infinite; 
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: $gradient-secondary;
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0;
+      z-index: 0;
+      background-size: 200% 200%;
+      animation: rotateGradient 2s linear infinite; 
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      transition: opacity 0.3s ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    p {
+      margin: 0;
+      font-size: 17px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-description {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 0 0 16px 16px;
+      color: $color-light;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      font-size: 16px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: $bg-dark-2;
+      border: 0;
+
+      &::before {
+        opacity: 1;
+      }
+
+      h2 {
+        opacity: 0;
+      }
+
+      .service-description {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes rotateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
